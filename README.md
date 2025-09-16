@@ -1,2 +1,2 @@
 # Python-OWC
-Python Offiline Web Communication Framework
+Python Offline Web Communication Framework
