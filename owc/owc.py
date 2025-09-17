@@ -39,7 +39,6 @@ class OWC:
         if self.stop_process:
             end_process(self.uuid)
             raise StopAsyncIteration
-        print("from owc")
         await asyncio.sleep(self.delay)
 
     def __repr__(self) -> str:
