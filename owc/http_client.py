@@ -48,8 +48,8 @@ class HTTPClient:
         method: str,
         headers: Mapping[str, Any] = None,
         data: Mapping[str, Any] = None,
-        expires: int = None,
-        delay: int = 60,
+        expires: float = None,
+        delay: float = 60,
     ) -> None:
         async for _ in OWC(uuid=response.process_uuid, expires=expires, delay=delay):
             try:
@@ -74,8 +74,8 @@ class HTTPClient:
         method: str,
         headers: Mapping[str, Any] = None,
         data: Mapping[str, Any] = None,
-        expires: int = None,
-        delay: int = 60,
+        expires: float = None,
+        delay: float = 60,
     ) -> Response:
         response = Response()
         asyncio.create_task(
@@ -96,8 +96,8 @@ class HTTPClient:
         url: str,
         *,
         headers: Mapping[str, Any] = None,
-        expires: int = None,
-        delay: int = 60,
+        expires: float = None,
+        delay: float = 60,
     ) -> Response:
         return await self.request(
             url=url, method="GET", headers=headers, expires=expires, delay=delay
@@ -109,8 +109,8 @@ class HTTPClient:
         *,
         headers: Mapping[str, Any] = None,
         data: Mapping[str, Any] = None,
-        expires: int = None,
-        delay: int = 60,
+        expires: float = None,
+        delay: float = 60,
     ) -> Response:
         return await self.request(
             url=url,
@@ -127,8 +127,8 @@ class HTTPClient:
         *,
         headers: Mapping[str, Any] = None,
         data: Mapping[str, Any] = None,
-        expires: int = None,
-        delay: int = 60,
+        expires: float = None,
+        delay: float = 60,
     ) -> Response:
         return await self.request(
             url=url,
@@ -145,8 +145,8 @@ class HTTPClient:
         *,
         headers: Mapping[str, Any] = None,
         data: Mapping[str, Any] = None,
-        expires: int = None,
-        delay: int = 60,
+        expires: float = None,
+        delay: float = 60,
     ) -> Response:
         return await self.request(
             url=url,
@@ -162,8 +162,8 @@ class HTTPClient:
         url: str,
         *,
         headers: Mapping[str, Any] = None,
-        expires: int = None,
-        delay: int = 60,
+        expires: float = None,
+        delay: float = 60,
     ) -> Response:
         return await self.request(
             url=url, method="DELETE", headers=headers, expires=expires, delay=delay

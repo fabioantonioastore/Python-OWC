@@ -17,7 +17,7 @@ def add_process(uuid: str, process: OWC) -> None:
 
 
 class OWC:
-    def __init__(self, uuid: str, expires: int = None, delay: int = 60) -> None:
+    def __init__(self, uuid: str, expires: float = None, delay: float = 60) -> None:
         self.expires = None
         if expires:
             self.expires = datetime.datetime.now() + datetime.timedelta(seconds=expires)
