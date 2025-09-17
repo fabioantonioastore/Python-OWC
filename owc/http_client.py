@@ -15,11 +15,11 @@ class Response:
         self.successful = None
 
     @property
-    def uuid(self) -> str:
+    def process_uuid(self) -> str:
         return self._uuid
 
     def end_process(self) -> None:
-        end_process(self.uuid)
+        end_process(self.process_uuid)
 
     def __repr__(self) -> str:
         return "Response()"
@@ -51,7 +51,7 @@ class HTTPClient:
         expires: int = None,
         delay: int = 60,
     ) -> None:
-        async for _ in OWC(uuid=response.uuid, expires=expires, delay=delay):
+        async for _ in OWC(uuid=response.process_uuid, expires=expires, delay=delay):
             try:
                 response.content = await self.session.request(
                     url=url, method=method, headers=headers, json=data
