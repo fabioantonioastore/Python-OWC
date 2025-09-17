@@ -3,7 +3,7 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "owc"
+name = "python_owc"
 version = "0.0.1"
 authors = [
     { name = "Fabio Antonio Astore", email = "astore.a.fabio@gmail.com"}
