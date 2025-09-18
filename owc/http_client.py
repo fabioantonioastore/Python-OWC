@@ -10,13 +10,13 @@ from owc import OWC, end_process
 
 class Response:
     def __init__(self) -> None:
-        self._uuid = str(uuid.uuid4())
+        self.__uuid = str(uuid.uuid4())
         self.content: ClientResponse | None = None
         self.successful = None
 
     @property
     def process_uuid(self) -> str:
-        return self._uuid
+        return self.__uuid
 
     def end_process(self) -> None:
         end_process(self.process_uuid)
