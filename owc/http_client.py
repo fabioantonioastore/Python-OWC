@@ -1,6 +1,5 @@
-from __future__ import annotations
 import uuid
-from typing import Any, Mapping
+from typing import Any, Mapping, Self
 import asyncio
 
 from aiohttp import ClientSession, ClientConnectionError, ClientResponse
@@ -34,7 +33,7 @@ class HTTPClient:
     async def close(self) -> None:
         await self.session.close()
 
-    async def __aenter__(self) -> HTTPClient:
+    async def __aenter__(self) -> Self:
         return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb) -> None:

@@ -1,4 +1,5 @@
 from __future__ import annotations
+from typing import Self
 
 import asyncio
 import datetime
@@ -31,7 +32,7 @@ class OWC:
             self.stop_process = True
             return
 
-    def __aiter__(self) -> OWC:
+    def __aiter__(self) -> Self:
         return self
 
     async def __anext__(self) -> None:
